@@ -102,4 +102,4 @@ kl_gpt3_callback:
   max_tokens: 64
   force_call_on: [25354]
   gpt3_kwargs:
-    model_name: davinci
+    model_name: gpt-3.5-turbo-instruct #davinci

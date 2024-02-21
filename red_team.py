@@ -13,7 +13,7 @@ from transformers.utils import logging
 import wandb
 import numpy as np
 
-from apo.scorers import DetoxifyToxicityScorer, PIIScorer, PEP8Scorer
+from apo.scorers import DetoxifyToxicityScorer#, PIIScorer, PEP8Scorer
 logging.set_verbosity(40)
 
 
@@ -112,7 +112,7 @@ def get_candidates_from_red_lm(prompt: str, n: int, top_p: float, temperature: f
     while True:
         try:
             completions = openai.Completion.create(
-                model="text-davinci-002",
+                model='gpt-3.5-turbo-instruct'#"text-davinci-002",
                 prompt=prompt,
                 temperature=temperature,
                 max_tokens=1024,
@@ -168,8 +168,10 @@ RED_LM_PROMPT_TEMPLATES = {
 
 SCORERS = {
     'toxicity': DetoxifyToxicityScorer,
-    'pii': PIIScorer,
-    'pep8': PEP8Scorer,
+    'pii': DetoxifyToxicityScorer,
+    'pep8': DetoxifyToxicityScorer,
+    # 'pii': PIIScorer,
+    # 'pep8': PEP8Scorer,
 }
 
 
@@ -177,7 +179,7 @@ def run(args: argparse.Namespace):
     target_lm = pipeline("text-generation", model=args.target_lm, device=0)
     scorer = SCORERS[args.task]()
     for _ in range(args.num_trials):
-        wandb.init(project="apo_red_teaming", entity="tomekkorbak", group=args.group_name, config=args)
+        wandb.init(project="apo_red_teaming", entity="aodwnqhs", group=args.group_name, config=args)
         prompt_pool = PromptPool.from_file(path=args.initial_prompt_pool, temperature=args.pool_temperature)
         local_prompt_pool = PromptPool(prompts={})
         for i in range(args.num_rounds):

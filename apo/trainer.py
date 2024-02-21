@@ -33,8 +33,11 @@ class CustomObjectiveTrainer(Trainer):
         inputs: dict[str, Any],
         return_outputs: bool = False
     ) -> torch.Tensor:
-        microbatch_size = inputs.input_ids.numel()
-        batch_size = inputs.input_ids.size(0)
+        # microbatch_size = inputs.input_ids.numel()
+        # batch_size = inputs.input_ids.size(0)
+        print(f'inputs : {inputs}')
+        microbatch_size = inputs['input_ids'].numel()
+        batch_size = inputs['input_ids'].size(0)
         if model.training:
             self.training_log_counter += 1
             should_log = self.training_log_counter % (self.args.logging_steps * 100) == 0
@@ -121,7 +124,7 @@ class CustomObjectiveTrainer(Trainer):
                 batch_size=self.args.train_batch_size,
                 num_workers=0,
                 pin_memory=self.args.dataloader_pin_memory,
-                shuffle=True,
+                # shuffle=True,
             )
         else:
             return super().get_train_dataloader()

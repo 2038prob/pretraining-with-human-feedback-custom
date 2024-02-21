@@ -1,0 +1,155 @@
+{
+    "os": "Linux-5.14.0-162.6.1.el9_1.x86_64-x86_64-with-glibc2.34",
+    "python": "3.9.0",
+    "heartbeatAt": "2024-02-19T05:51:50.382050",
+    "startedAt": "2024-02-19T05:51:39.613560",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--task",
+        "configs/toxicity/pretrain.yml",
+        "--method",
+        "configs/toxicity/mle.yml"
+    ],
+    "state": "running",
+    "program": "/home/mjbon/pretraining-with-human-feedback/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "train.py",
+    "git": {
+        "remote": "https://github.com/tomekkorbak/pretraining-with-human-feedback.git",
+        "commit": "1669680fbeeac9f65bb49af53f3a25a4a6a8ff0a"
+    },
+    "email": null,
+    "root": "/home/mjbon/pretraining-with-human-feedback",
+    "host": "storm2",
+    "username": "mjbon",
+    "executable": "/home/mjbon/miniconda3/envs/phf-custom/bin/python",
+    "cpu_count": 18,
+    "cpu_count_logical": 18,
+    "cpu_freq": {
+        "current": 3042.7649444444446,
+        "min": 1200.0,
+        "max": 4633.333333333333
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3878.002,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 3000.0,
+            "min": 1200.0,
+            "max": 4600.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 438.5899124145508,
+            "used": 58.523887634277344
+        }
+    },
+    "gpu": "NVIDIA TITAN RTX",
+    "gpu_count": 4,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA TITAN RTX",
+            "memory_total": 25769803776
+        },
+        {
+            "name": "NVIDIA TITAN RTX",
+            "memory_total": 25769803776
+        },
+        {
+            "name": "NVIDIA TITAN RTX",
+            "memory_total": 25769803776
+        },
+        {
+            "name": "NVIDIA TITAN RTX",
+            "memory_total": 25769803776
+        }
+    ],
+    "memory": {
+        "total": 187.88115692138672
+    }
+}

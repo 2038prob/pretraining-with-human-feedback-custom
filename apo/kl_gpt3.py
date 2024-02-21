@@ -65,12 +65,13 @@ class LanguageModel(ABC):
 
 
 class GPT3(LanguageModel):
-    model_name: str = "text-davinci-002"
+    model_name: str = "gpt-3.5-turbo-instruct" #"text-davinci-002"
     max_tokens: int = 16
     total_tokens_used: int = 0
     batch_size: 8
 
-    def __init__(self, model_name: Optional[str] = "text-davinci-002", max_tokens: int = 16, batch_size: int = 8):
+    # def __init__(self, model_name: Optional[str] = "text-davinci-002", max_tokens: int = 16, batch_size: int = 8):
+    def __init__(self, model_name: Optional[str] = "gpt-3.5-turbo-instruct", max_tokens: int = 16, batch_size: int = 8):
         self.model_name = model_name
         self.max_tokens = max_tokens
         self.total_tokens_used = 0
@@ -108,7 +109,7 @@ class GPT3(LanguageModel):
                         n=minibatch_size,
                         temperature=1,
                         logprobs=1 if save_logprobs else None,
-                        echo=True,
+                        # echo=True,
                         max_tokens=self.max_tokens
                     )
                 except openai.error.RateLimitError as exc:
